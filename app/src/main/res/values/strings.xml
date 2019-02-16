@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">mealmaker</string>
+    <string name="welcome_to_mealmaker">Welcome to mealmaker!</string>
+    <string name="what_is_mealmaker">mealmaker is a diet-oriented app that allows users to track their diet as well as receive dish suggestions based on their nutritional needs.</string>
+    <string name="how_does_mealmaker_work">our app works by reading the data you input and using it to calculate nutritional areas where you might need increased intake. for instance, someone who\'s eaten high-protein and high-carb meals all day would receive dish suggestions with higher concentrations of fat. (fat is not always bad!)</string>
+    <string name="next_button">NEXT</string>
+    <string name="lets_get_data_title">Let\'s get some data!</string>
+    <string name="submit_user_data_button">Submit</string>
+    <string name="name_text">Name</string>
+    <string name="weight_text">Weight</string>
+    <string name="height_text">Height</string>
+    <string name="lbs_text">lb</string>
+    <string name="kg_text">kg</string>
+    <string name="inches_text">in</string>
+    <string name="cm_text">cm</string>
+    <string name="age_text">Age</string>
+    <string name="title_activity_homepage">homepage</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+</resources>
