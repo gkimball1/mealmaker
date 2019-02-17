@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>9</integer>
+	<key>logs</key>
+	<dict>
+		<key>6257AEF9-17DB-4544-8B3F-51D054D4200B</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>6257AEF9-17DB-4544-8B3F-51D054D4200B.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>S</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>croads project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>croads</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project croads with scheme croads and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>570178036.56609201</real>
+			<key>timeStoppedRecording</key>
+			<real>570178043.83272696</real>
+			<key>title</key>
+			<string>Building project croads with scheme croads and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>6257AEF9-17DB-4544-8B3F-51D054D4200B</string>
+		</dict>
+		<key>F906F2F5-0829-4385-AAD3-ACDDD74BE91B</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>F906F2F5-0829-4385-AAD3-ACDDD74BE91B.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>S</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>croads project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>croads</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project croads with scheme croads and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>570177960.96036804</real>
+			<key>timeStoppedRecording</key>
+			<real>570177963.21447504</real>
+			<key>title</key>
+			<string>Building project croads with scheme croads and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>F906F2F5-0829-4385-AAD3-ACDDD74BE91B</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

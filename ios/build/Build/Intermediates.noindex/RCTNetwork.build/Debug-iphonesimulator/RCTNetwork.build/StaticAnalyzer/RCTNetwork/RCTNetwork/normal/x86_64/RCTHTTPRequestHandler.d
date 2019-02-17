@@ -1,0 +1,15 @@
+dependencies: \
+  /Users/parthpatel/Desktop/map-project/croads/node_modules/react-native/Libraries/Network/RCTHTTPRequestHandler.mm \
+  /Users/parthpatel/Desktop/map-project/croads/node_modules/react-native/Libraries/Network/RCTHTTPRequestHandler.h \
+  /Users/parthpatel/Desktop/map-project/croads/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
+  /Users/parthpatel/Desktop/map-project/croads/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTURLRequestHandler.h \
+  /Users/parthpatel/Desktop/map-project/croads/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/parthpatel/Desktop/map-project/croads/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/parthpatel/Desktop/map-project/croads/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTURLRequestDelegate.h \
+  /Users/parthpatel/Desktop/map-project/croads/node_modules/react-native/Libraries/Network/RCTNetworking.h \
+  /Users/parthpatel/Desktop/map-project/croads/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTEventEmitter.h \
+  /Users/parthpatel/Desktop/map-project/croads/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Users/parthpatel/Desktop/map-project/croads/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Users/parthpatel/Desktop/map-project/croads/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Users/parthpatel/Desktop/map-project/croads/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Users/parthpatel/Desktop/map-project/croads/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTNetworkTask.h
