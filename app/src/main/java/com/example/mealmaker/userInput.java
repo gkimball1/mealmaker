@@ -71,8 +71,8 @@ public class userInput extends AppCompatActivity {
     }
 
     private double mifflinJeor(int weight, int height, int age, char gender, double activity) {
-        if (gender == 'f') return activity*(10*weight+6.25*height-5*age-161);
-        return activity*(10*weight+6.25*height-5*age+5);
+        if (gender == 'f') return java.lang.Math.max(0, activity*(10*weight+6.25*height-5*age-161));
+        return java.lang.Math.max(0, activity*(10*weight+6.25*height-5*age+5));
     }
 
     public void storeData(View view) {
