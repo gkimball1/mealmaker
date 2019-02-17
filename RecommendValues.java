@@ -291,21 +291,22 @@ public class RecommendValues {
 
     public static void main(String[] args) {
         try {
-            File file = new File("data.txt");
+            File file = new File("data/data.txt");
             HashMap<String, float[]> data = new HashMap<String, float[]>();
             BufferedReader reader = new BufferedReader(new FileReader(file));
             for (String line = reader.readLine(); line != null; line = reader.readLine()) {
-                String[] split = line.split(";");
+                String[] split = line.split("::");
                 ArrayList<Float> vals = new ArrayList<Float>();
                 for (int i = 1; i < split.length; i++) {
                     vals.add(Float.parseFloat(split[i]));
                 }
                 float[] valsArray = new float[vals.size()];
                 for (int i = 0; i < vals.size(); i++) {
-                    valsArray[i] = vals.get(i);
+                    valsArray[i] = vals.get(i)/vals.get(vals.size()-1);
                 }
                 data.put(split[0], valsArray);
             }
+            RecommendValues rv = new RecommendValues(data);
         } catch (Exception e) {
             e.printStackTrace();
         }
