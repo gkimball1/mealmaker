@@ -11,3 +11,8 @@
 /build
 /captures
 .externalNativeBuild
+.node_modules.zip
+/.node_modules/*
+.node_modules
+node_modules/
+node_modules.zip
