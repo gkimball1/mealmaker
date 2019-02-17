@@ -103,7 +103,7 @@ public class userInput extends AppCompatActivity {
         editor.putInt("age", userAge);
         editor.putInt("gender", userGender);
         editor.putFloat("activity", (float) userActivity);
-        editor.putInt("caloric needs",
+        editor.putInt("calories",
                 (int) mifflinJeor(userWeight, userHeight, userAge, userGender, userActivity));
         editor.putBoolean("log", true);
         editor.apply();

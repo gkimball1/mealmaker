@@ -118,6 +118,7 @@ public class ActivityOptions extends AppCompatActivity {
                     frag = new camera();
                     break;
                 case 2:
+                    frag = new Settings();
                     break;
             }
             return frag;
