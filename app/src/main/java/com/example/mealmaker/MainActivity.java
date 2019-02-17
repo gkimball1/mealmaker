@@ -12,12 +12,25 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SharedPreferences preferences = getSharedPreferences(PREFS_FILE, MODE_PRIVATE);
-        if (preferences.getBoolean("log", false)) {
+        SharedPreferences pref = getSharedPreferences(PREFS_FILE, MODE_PRIVATE);
+
+        if (pref.getBoolean("log", false)) {
             Intent intent = new Intent(this, ActivityOptions.class);
             startActivity(intent);
         }
-        else setContentView(R.layout.activity_main);
+        else { // initialize variables and show the main method
+            SharedPreferences.Editor editor = getSharedPreferences(PREFS_FILE, MODE_PRIVATE).edit();
+            editor.putString("name", "");
+            editor.putInt("weight", 0);
+            editor.putInt("height", 0);
+            editor.putInt("age", 0);
+            editor.putInt("gender", 'a');
+            editor.putFloat("activity", (float) 0.0);
+            editor.putInt("calories", 0);
+            editor.putInt("eaten", 0);
+            editor.apply();
+            setContentView(R.layout.activity_main);
+        }
     }
 
     public void goToUserInput(View view) {
