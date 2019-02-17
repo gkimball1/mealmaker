@@ -12,7 +12,7 @@ public class RecommendValues {
     private int numNutrients = 3, NUMTOP = 3, numCharacteristics;
     private HashMap<String, float[]> foodData;
     private HashMap<String, Float>[] sorted;
-    private float TOLERANCE = 100;
+    private float TOLERANCE = 100000;
 
     /**
      * The main point of this constructor is to process the data into an optimal algorithm form. 
@@ -27,7 +27,7 @@ public class RecommendValues {
             this.numCharacteristics = characteristics.length;
             break;
         }
-        float[] means = getMeans(foodData);
+        float[] means = getMeans();
         this.sorted = getSorted(foodData, means);
     }
 
@@ -77,18 +77,20 @@ public class RecommendValues {
      * 
      * @return Returns mean of all float[] arrays in a float[]
      */
-    private float[] getMeans(HashMap<String, float[]> data) {
+    private float[] getMeans() {
         float[] means = new float[numNutrients];
         try {
-            for (float[] vals : data.values()) {
+            for (float[] vals : foodData.values()) {
                 for (int i = 0; i < numNutrients; i++) {
-                    means[i] += vals[i];
+                    if (vals[i] == vals[i] && vals[i] != Float.POSITIVE_INFINITY && vals[i] != Float.NEGATIVE_INFINITY) {
+                        means[i] += vals[i];
+                    }
                 }
                 // GetMean mean = new GetMean(data, i, means);
                 // mean.start();
             }
             for (int i = 0; i < numNutrients; i++) {
-                means[i] /= data.size();
+                means[i] /= foodData.size();
             }
             // Thread.sleep(500);
         }
@@ -178,8 +180,10 @@ public class RecommendValues {
     public ArrayList<HashMap<String, Float>> match(User user) {
         float[] toIntake = getMealIntake(user);
         ArrayList<String>[] topIngredientsNames = new ArrayList[numNutrients];
+        for (int i = 0; i < numNutrients; i++) {
+            topIngredientsNames[i] = new ArrayList<String>();
+        }
         getTopIngredients(toIntake, topIngredientsNames);
-        
         ArrayList<HashMap<String, Float>> combinations = new ArrayList<HashMap<String, Float>>();
         getCombinations(topIngredientsNames, combinations, toIntake);
 
@@ -197,19 +201,17 @@ public class RecommendValues {
             intake[i] = toIntake[i];
         }
         Matrix b = new Matrix(new double[][]{intake});
+        System.out.println(topIngredientsNames[2]);
         for (String ingredient1 : topIngredientsNames[0]) {
             for (String ingredient2 : topIngredientsNames[1]) {
                 for (String ingredient3 : topIngredientsNames[2]) {
                     HashMap<String, Float> combo = new HashMap<>();
                     Matrix A = getMatrix(ingredient1, ingredient2, ingredient3);
-                    double[] x = A.solve(b).getArrayCopy()[0];
-                    float[] sol = new float[x.length];
-                    for (int i = 0; i < x.length; i++) {
-                        sol[i] = (float) x[i];
-                    }
-                    combo.put(ingredient1, sol[0]);
-                    combo.put(ingredient2, sol[1]);
-                    combo.put(ingredient3, sol[2]);
+                    double[] x = A.times(b.transpose()).getArrayCopy()[0];
+                    combo.put(ingredient1, (float) x[0]);
+                    combo.put(ingredient2, (float) x[0]);
+                    combo.put(ingredient3, (float) x[0]);
+                    combinations.add(combo);
                 }
             }
         }
@@ -231,6 +233,9 @@ public class RecommendValues {
                                   ) 
     {
         ArrayList<Float>[] topIngredientsValues = new ArrayList[numNutrients];
+        for (int i = 0; i < numNutrients; i++) {
+            topIngredientsValues[i] = new ArrayList<Float>();
+        }
         for (int i = 0; i < numNutrients; i++) {
             for (String key : sorted[i].keySet()) {
                 addCap(
@@ -284,7 +289,8 @@ public class RecommendValues {
         float[] meal = user.getNextMeal(), currentIntake = user.getCurrentIntake(), expectedIntake = user.getExpectedIntake();
         float[] nextMeal = new float[meal.length];
         for (int i = 0; i < meal.length; i++) {
-            nextMeal[i] = meal[i] + expectedIntake[i] - currentIntake[i];
+            // nextMeal[i] = meal[i] + expectedIntake[i] - currentIntake[i];
+            nextMeal[i] = meal[i] + expectedIntake[i];
         }
         return nextMeal;
     }
@@ -307,6 +313,11 @@ public class RecommendValues {
                 data.put(split[0], valsArray);
             }
             RecommendValues rv = new RecommendValues(data);
+            User user = new User("Brian Yu");
+            // user.load();
+            user.addMeal(new float[]{100, 300, 200});
+            System.out.println(rv.match(user).get(0));
+            // user.save();
         } catch (Exception e) {
             e.printStackTrace();
         }

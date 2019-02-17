@@ -1,6 +1,9 @@
+import java.util.ArrayList;
+import java.io.*;
+
 public class User {
 
-    private float[] currentIntake, expectedIntake;
+    private float[] currentIntake = new float[]{0, 0, 0}, expectedIntake = new float[]{450, 300, 250};
     private ArrayList<float[]> history;
     private String name, gender, activity, log;
     private int weight, height, age, calories;
@@ -17,16 +20,15 @@ public class User {
      * @return Returns the user's next meal value plan. 
      */
     public float[] getNextMeal() {
-        // iterate to next meal
-        return null;
+        return new float[]{150, 100, 83};
     }
 
     public float[] getCurrentIntake() {
-        return null;
+        return currentIntake;
     }
 
     public float[] getExpectedIntake() {
-        return null;
+        return expectedIntake;
     }
 
     public void setName(String name) {
@@ -62,7 +64,7 @@ public class User {
     }
 
     public void setExpectedIntake(double carbs, double protein, double fat) {
-        this.expectedIntake = {(float) carbs*1000, (float) protein*1000, (float) fat*1000}
+        this.expectedIntake = new float[]{(float) carbs*1000, (float) protein*1000, (float) fat*1000};
     }
 
     public void addMeal(float[] meal) {
@@ -72,7 +74,31 @@ public class User {
         meals++;
         if (meals == numMeals) {
             meals = 0;
-            currentIntake = {0, 0, 0};
+            history.add(currentIntake);
+            currentIntake = new float[]{0, 0, 0};
+        }
+    }
+
+    public void load() {
+        try {
+            File file = new File("data/user.txt");
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String line = reader.readLine();
+            System.out.println(line);
+            reader.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void save() {
+        try {
+            File file = new File("data/user.txt");
+            BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+            writer.write(name + " " + calories);
+            writer.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
