@@ -21,4 +21,12 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_options">ActivityOptions</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="tab_text_1">Dishes</string>
+    <string name="tab_text_2">Photo</string>
+    <string name="tab_text_3">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

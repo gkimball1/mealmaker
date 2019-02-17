@@ -12,18 +12,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        SharedPreferences preferences = getSharedPreferences(PREFS_FILE, MODE_PRIVATE);
+        if (preferences.getBoolean("log", false)) {
+            Intent intent = new Intent(this, ActivityOptions.class);
+            startActivity(intent);
+        }
+        else setContentView(R.layout.activity_main);
     }
 
     public void goToUserInput(View view) {
-        SharedPreferences preferences = getSharedPreferences(PREFS_FILE, MODE_PRIVATE);
-        if (preferences.getBoolean("log", false)) {
-            Intent intent = new Intent(this, homepage.class);
-            startActivity(intent);
-        }
-        else {
-            Intent intent = new Intent(this, userInput.class);
-            startActivity(intent);
-        }
+        Intent intent = new Intent(this, userInput.class);
+        startActivity(intent);
     }
 }

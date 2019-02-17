@@ -108,7 +108,7 @@ public class userInput extends AppCompatActivity {
         editor.putBoolean("log", true);
         editor.apply();
 
-        Intent intent = new Intent(this, homepage.class);
+        Intent intent = new Intent(this, ActivityOptions.class);
         startActivity(intent);
     }
 }
